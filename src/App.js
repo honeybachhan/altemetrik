@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { Component} from 'react';
+import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
+import Login from './login';
+import Withdraw from './withdraw';
+import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
+class App extends Component {
 
-function App() {
+  render(){
+    
+    return (<Router>
+        <Route exact path="/" component={Login} />
+        <Route path="/withdraw_fund" component={Withdraw} />
+      </Router>      );
+  }
+}
+/*function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -21,6 +34,6 @@ function App() {
       </header>
     </div>
   );
-}
+}*/
 
 export default App;
